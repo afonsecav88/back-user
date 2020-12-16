@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using SistemaContratos.Models;
 using SistemaTareas.Interfaces;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace SistemaContratos.Controllers
 {
@@ -25,7 +24,8 @@ namespace SistemaContratos.Controllers
         public async Task<ActionResult<IEnumerable<Tarea>>> GetTareas()
         {
             var tarea =  await _context.GetTareas();
-            return Ok(tarea); 
+            return Ok(tarea);
+            
         }
 
         // GET api/<controller>/5

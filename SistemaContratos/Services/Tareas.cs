@@ -10,47 +10,58 @@ namespace SistemaTareas.Services
 {
     public class Tareas : ITareas
     {
-        private readonly ListaTareasContext _context;
+        private readonly ListaTareasContext _tareas;
 
-        public Tareas(ListaTareasContext context)
+        public Tareas(ListaTareasContext tareas)
         {
-            _context = context;
+            _tareas = tareas;
         }
 
 
-        public async Task<IEnumerable<Tarea>> GetTareas()
+        public bool BuscarTareaId(int tareaId)
         {
-            return await _context.Tareas.ToListAsync();         
+            return _tareas.Tareas.Any(x=>x.Id==tareaId);
         }
 
-
-        public async Task<Tarea> GetTareaById(int id)
+        public bool BuscarTareaTitulo(string titulo)
         {
-            return await _context.Tareas.FirstOrDefaultAsync(x=>x.Id==id);
-        }
+            bool valor = _tareas.Tareas.Any(x => x.Titulo.ToLower().Trim() == titulo.ToLower().Trim());
 
-        public void CreateTarea(Tarea Tarea)
-        {
-            if (Tarea==null)
-            {
-                throw new ArgumentNullException(nameof(Tarea));  
-            };
-          
-          _context.Tareas.Add(Tarea);
-           _context.SaveChanges();
-               
+            return valor;
         }
 
-        public void DeleteTarea(Tarea Tarea)
+        public bool CreateTarea(Tarea Tarea)
         {
-            throw new NotImplementedException();
+            _tareas.Tareas.Add(Tarea);
+            return Save();
         }
-        
-       
-        public void UpdateTarea(Tarea Tarea)
+
+        public bool DeleteTarea(Tarea Tarea)
         {
-            throw new NotImplementedException();
+            _tareas.Tareas.Remove(Tarea);
+            return Save();
         }
-       
+
+        public async Task<Tarea> GetTareaById(int tareaId)
+        {
+          return await _tareas.Tareas.FirstOrDefaultAsync(x=>x.Id == tareaId);
+        }
+
+        public async Task<ICollection<Tarea>> GetTareas()
+        {
+            return await _tareas.Tareas.OrderBy(x=>x.Titulo).ToListAsync();
+        }
+
+        public bool Save()
+        {
+          return _tareas.SaveChanges()>=0 ? true : false ;
+        }
+
+        public bool UpdateTarea(Tarea Tarea)
+        {
+            _tareas.Tareas.Update(Tarea);
+            return Save();
+
+        }
     }
 }

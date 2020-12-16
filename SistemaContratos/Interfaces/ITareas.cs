@@ -9,16 +9,21 @@ namespace SistemaTareas.Interfaces
 {
     public interface ITareas
     {
-     Task<IEnumerable<Tarea>> GetTareas();
+        Task<ICollection<Tarea>> GetTareas();
 
-        Task<Tarea> GetTareaById(int id);
+        Task<Tarea> GetTareaById(int tareaId);
 
-        void CreateTarea(Tarea Tarea);
+        bool BuscarTareaTitulo(string titulo);
 
-        void UpdateTarea(Tarea Tarea);
+        bool BuscarTareaId(int tareaId);
 
-        void DeleteTarea(Tarea Tarea);
+        bool CreateTarea(Tarea Tarea);
+
+        bool UpdateTarea(Tarea Tarea);
 
 
+        bool DeleteTarea(Tarea Tarea);
+
+        bool Save();
     }
 }
