@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace ListaTareas.Services
 {
-    public class Tareas : ITareas
+    public class CTareas : ITareas
     {
         private readonly ListaTareasContext _tareas;
 
-        public Tareas(ListaTareasContext tareas)
+        public CTareas(ListaTareasContext tareas)
         {
             _tareas = tareas;
         }
@@ -30,16 +30,20 @@ namespace ListaTareas.Services
             return valor;
         }
 
-        public bool CreateTarea(Tarea Tarea)
+        public void CreateTarea(Tarea Tarea)
         {
-            _tareas.Tareas.Add(Tarea);
-            return Save();
+            if (Tarea == null)
+            {
+                throw new ArgumentNullException();
+            }
+                        
+            _tareas.Tareas.Add(Tarea);            
         }
 
-        public bool DeleteTarea(Tarea Tarea)
+        public void DeleteTarea(Tarea Tarea)
         {
             _tareas.Tareas.Remove(Tarea);
-            return Save();
+            
         }
 
         public async Task<Tarea> GetTareaById(int tareaId)
@@ -52,15 +56,15 @@ namespace ListaTareas.Services
             return await _tareas.Tareas.OrderBy(x=>x.Titulo).ToListAsync();
         }
 
-        public bool Save()
+        public bool SaveChanges()
         {
-          return _tareas.SaveChanges()>=0 ? true : false ;
+          return (_tareas.SaveChanges()>=0) ;
         }
 
-        public bool UpdateTarea(Tarea Tarea)
+        public void UpdateTarea(Tarea Tarea)
         {
             _tareas.Tareas.Update(Tarea);
-            return Save();
+           
 
         }
     }

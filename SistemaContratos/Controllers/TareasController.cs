@@ -50,10 +50,11 @@ namespace ListaTareas.Controllers
 
         // POST /controller
         [HttpPost]
-        public ActionResult<Tarea> CreateTarea(Tarea tar)
+        public ActionResult<Tarea> CreateTarea(Tarea tarea)
         {
-             _context.CreateTarea(tar);
-             return CreatedAtRoute(nameof(GetTareaById), new { Id = tar.Id}, tar);
+             _context.CreateTarea(tarea);
+             _context.SaveChanges();
+             return CreatedAtRoute(nameof(GetTareaById), new { Id = tarea.Id}, tarea);
         }
 
         // PUT /controller>/5

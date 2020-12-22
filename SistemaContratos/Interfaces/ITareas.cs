@@ -17,13 +17,13 @@ namespace ListaTareas.Interfaces
 
         bool BuscarTareaId(int tareaId);
 
-        bool CreateTarea(Tarea Tarea);
+        void CreateTarea(Tarea Tarea);
 
-        bool UpdateTarea(Tarea Tarea);
+        void UpdateTarea(Tarea Tarea);
 
 
-        bool DeleteTarea(Tarea Tarea);
+        void DeleteTarea(Tarea Tarea);
 
-        bool Save();
+        bool SaveChanges();
     }
 }

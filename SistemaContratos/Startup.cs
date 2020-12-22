@@ -39,7 +39,7 @@ namespace ListaTareas
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             //Declarando la Inyección de Dependencias
-            services.AddScoped<ITareas,Tareas>();
+            services.AddScoped<ITareas,CTareas>();
 
             //Declarando el uso de automapper
 

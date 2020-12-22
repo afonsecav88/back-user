@@ -17,6 +17,9 @@ namespace ListaTareas.Models
         {
         }
 
+
+        //La propiedad Tareas es la que uso para entity framework y asi mismo se llama la tabla
+        //EL DBSet Tarea es el nombre de la clase modelo
         public virtual DbSet<Tarea> Tareas { get; set; }
 
         /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
