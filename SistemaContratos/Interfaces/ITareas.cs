@@ -1,15 +1,15 @@
-﻿using SistemaContratos.Models;
+﻿using ListaTareas.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SistemaTareas.Interfaces
+namespace ListaTareas.Interfaces
 {
     public interface ITareas
     {
-        Task<ICollection<Tarea>> GetTareas();
+        Task<IEnumerable<Tarea>> GetTareas();
 
         Task<Tarea> GetTareaById(int tareaId);
 

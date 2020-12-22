@@ -34,7 +34,6 @@ C:\Users\adrian\source\repos\Api\SistemaContratos\obj\Debug\netcoreapp3.1\ListaT
 C:\Users\adrian\source\repos\Api\SistemaContratos\obj\Debug\netcoreapp3.1\ListaTareas.dll
 C:\Users\adrian\source\repos\Api\SistemaContratos\obj\Debug\netcoreapp3.1\ListaTareas.pdb
 C:\Users\adrian\source\repos\Api\SistemaContratos\bin\Debug\netcoreapp3.1\AutoMapper.dll
-C:\Users\adrian\source\repos\Api\SistemaContratos\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\adrian\source\repos\Api\SistemaContratos\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\adrian\source\repos\Api\SistemaContratos\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\adrian\source\repos\Api\SistemaContratos\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
@@ -66,3 +65,4 @@ C:\Users\adrian\source\repos\Api\SistemaContratos\bin\Debug\netcoreapp3.1\runtim
 C:\Users\adrian\source\repos\Api\SistemaContratos\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\adrian\source\repos\Api\SistemaContratos\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\adrian\source\repos\Api\SistemaContratos\obj\Debug\netcoreapp3.1\ListaTareas.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\adrian\source\repos\Api\SistemaContratos\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

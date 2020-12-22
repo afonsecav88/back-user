@@ -1,29 +1,35 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using SistemaContratos.Models;
-using SistemaTareas.Interfaces;
+using ListaTareas.DTOs;
+using ListaTareas.Models;
+using ListaTareas.Interfaces;
 
 
-namespace SistemaContratos.Controllers
+namespace ListaTareas.Controllers
 {
     [Route("[controller]")]
     public class TareasController : ControllerBase
     {
         private readonly ITareas _context;
+        private readonly IMapper _mapper;
 
-        public TareasController(ITareas Context)
+        public TareasController(ITareas context,IMapper mapper )
         {
-            _context = Context;
+            _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/<controller>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Tarea>>> GetTareas()
         {
-            var tarea =  await _context.GetTareas();
+            var tarea = await _context.GetTareas();
+
             return Ok(tarea);
             
         }
@@ -36,7 +42,7 @@ namespace SistemaContratos.Controllers
 
             if (tarea==null)
             {
-                return NotFound();
+                return NotFound("Tarea no Encontrada.");
             }
 
             return Ok(tarea);

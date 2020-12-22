@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SistemaContratos.Models;
-using SistemaTareas.Interfaces;
+using ListaTareas.Models;
+using ListaTareas.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SistemaTareas.Services
+namespace ListaTareas.Services
 {
     public class Tareas : ITareas
     {
@@ -47,7 +47,7 @@ namespace SistemaTareas.Services
           return await _tareas.Tareas.FirstOrDefaultAsync(x=>x.Id == tareaId);
         }
 
-        public async Task<ICollection<Tarea>> GetTareas()
+        public async Task<IEnumerable<Tarea>> GetTareas()
         {
             return await _tareas.Tareas.OrderBy(x=>x.Titulo).ToListAsync();
         }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SistemaContratos.DTOs
+namespace ListaTareas.DTOs
 {
-    public class TareasDTO
+    public class TareasReadDTO
     {
         public int Id { get; set; }
         public string Titulo { get; set; }

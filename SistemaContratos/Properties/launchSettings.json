@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "SistemaContratos": {
+    "ListaTareas": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",

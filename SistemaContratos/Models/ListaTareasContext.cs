@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace SistemaContratos.Models
+namespace ListaTareas.Models
 {
     public partial class ListaTareasContext : DbContext
     {

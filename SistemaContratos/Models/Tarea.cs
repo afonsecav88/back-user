@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace SistemaContratos.Models
+namespace ListaTareas.Models
 {
     public partial class Tarea
     {

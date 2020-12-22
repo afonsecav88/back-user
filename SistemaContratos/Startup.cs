@@ -12,11 +12,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using SistemaContratos.Models;
-using SistemaTareas.Interfaces;
-using SistemaTareas.Services;
+using ListaTareas.Models;
+using ListaTareas.Interfaces;
+using ListaTareas.Services;
+using AutoMapper;
+using ListaTareas.Profiles;
 
-namespace SistemaContratos
+namespace ListaTareas
 {
     public class Startup
     {
@@ -38,6 +40,12 @@ namespace SistemaContratos
 
             //Declarando la Inyección de Dependencias
             services.AddScoped<ITareas,Tareas>();
+
+            //Declarando el uso de automapper
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+           // services.AddAutoMapper(typeof(TareasProfile));
+
           
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
