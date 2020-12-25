@@ -30,20 +30,23 @@ namespace ListaTareas.Services
             return valor;
         }
 
-        public void CreateTarea(Tarea Tarea)
+        public bool CreateTarea(Tarea Tarea)
         {
             if (Tarea == null)
             {
                 throw new ArgumentNullException();
             }
                         
-            _tareas.Tareas.Add(Tarea);            
+            _tareas.Tareas.Add(Tarea);
+            return Save();
+            
         }
 
-        public void DeleteTarea(Tarea Tarea)
+        public bool DeleteTarea(Tarea Tarea)
         {
             _tareas.Tareas.Remove(Tarea);
-            
+           return Save();
+
         }
 
         public async Task<Tarea> GetTareaById(int tareaId)
@@ -56,14 +59,15 @@ namespace ListaTareas.Services
             return await _tareas.Tareas.OrderBy(x=>x.Titulo).ToListAsync();
         }
 
-        public bool SaveChanges()
+        public bool Save()
         {
-          return (_tareas.SaveChanges()>=0) ;
+          return _tareas.SaveChanges()>=0 ? true:false ;
         }
 
         public void UpdateTarea(Tarea Tarea)
         {
             _tareas.Tareas.Update(Tarea);
+            Save();
            
 
         }

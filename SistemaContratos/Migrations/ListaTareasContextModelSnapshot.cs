@@ -25,23 +25,17 @@ namespace ListaTareas.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Descripción")
+                    b.Property<string>("Descripcion")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nchar(50)")
-                        .IsFixedLength(true);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Estado")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nchar(50)")
-                        .IsFixedLength(true);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Titulo")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nchar(50)")
-                        .IsFixedLength(true);
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

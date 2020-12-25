@@ -44,7 +44,7 @@ namespace ListaTareas
             //Declarando el uso de automapper
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-           // services.AddAutoMapper(typeof(TareasProfile));
+            services.AddAutoMapper(typeof(TareasProfile));
 
           
         }

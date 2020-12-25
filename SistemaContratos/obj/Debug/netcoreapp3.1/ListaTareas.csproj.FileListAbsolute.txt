@@ -64,5 +64,5 @@ C:\Users\adrian\source\repos\Api\SistemaContratos\bin\Debug\netcoreapp3.1\runtim
 C:\Users\adrian\source\repos\Api\SistemaContratos\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\adrian\source\repos\Api\SistemaContratos\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\adrian\source\repos\Api\SistemaContratos\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\adrian\source\repos\Api\SistemaContratos\obj\Debug\netcoreapp3.1\ListaTareas.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\adrian\source\repos\Api\SistemaContratos\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\adrian\source\repos\Api\SistemaContratos\obj\Debug\netcoreapp3.1\ListaTareas.MvcApplicationPartsAssemblyInfo.cache

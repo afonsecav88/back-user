@@ -7,7 +7,7 @@ namespace ListaTareas.DTOs
 {
     public class TareasReadDTO
     {
-        public int Id { get; set; }
+       // public int Id { get; set; }
         public string Titulo { get; set; }
         public string Descripción { get; set; }
         public string Estado { get; set; }

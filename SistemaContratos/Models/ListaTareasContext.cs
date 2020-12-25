@@ -29,13 +29,13 @@ namespace ListaTareas.Models
 
                 optionsBuilder.UseSqlServer("DefaultConnection");
             }
-        }*/
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Tarea>(entity =>
             {
-                entity.Property(e => e.Descripción)
+                entity.Property(e => e.Descripcion)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsFixedLength(true);
@@ -54,6 +54,6 @@ namespace ListaTareas.Models
             OnModelCreatingPartial(modelBuilder);
         }
 
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);*/
     }
 }
