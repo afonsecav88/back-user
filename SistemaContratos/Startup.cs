@@ -22,7 +22,8 @@ namespace ListaTareas
 {
     public class Startup
     {
-         public Startup(IConfiguration configuration) 
+      
+        public Startup(IConfiguration configuration) 
         {
             this.Configuration = configuration;
                
@@ -32,6 +33,9 @@ namespace ListaTareas
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //permitiendo acceso desde el frontend
+            services.AddCors();
+
             services.AddControllers();
 
             //Configurado el contexto a la base de datos sql 
@@ -59,6 +63,12 @@ namespace ListaTareas
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            //permitiendo acceso desde el frontend
+            app.UseCors(x => x
+            .AllowAnyMethod()
+            .AllowAnyOrigin()
+            .AllowAnyHeader());
 
             app.UseAuthorization();
 
