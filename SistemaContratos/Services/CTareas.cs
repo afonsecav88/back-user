@@ -23,13 +23,7 @@ namespace ListaTareas.Services
             return _tareas.Tareas.Any(x=>x.Id==tareaId);
         }
 
-        public bool BuscarTareaTitulo(string titulo)
-        {
-            bool valor = _tareas.Tareas.Any(x => x.Titulo.ToLower().Trim() == titulo.ToLower().Trim());
-
-            return valor;
-        }
-
+     
         public bool CreateTarea(Tarea Tarea)
         {
             if (Tarea == null)
@@ -52,6 +46,13 @@ namespace ListaTareas.Services
         public async Task<Tarea> GetTareaById(int tareaId)
         {
           return await _tareas.Tareas.FirstOrDefaultAsync(x=>x.Id == tareaId);
+        }
+
+        public async Task<IEnumerable<Tarea>> BuscarTareaTitulo(string titulo)
+        {
+            List<Tarea> listado = await _tareas.Tareas.Where(x => x.Titulo.Contains(titulo.ToLower().Trim())).ToListAsync();
+
+            return listado;
         }
 
         public async Task<IEnumerable<Tarea>> GetTareas()

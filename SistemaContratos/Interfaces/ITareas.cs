@@ -13,7 +13,7 @@ namespace ListaTareas.Interfaces
 
         Task<Tarea> GetTareaById(int tareaId);
 
-        bool BuscarTareaTitulo(string titulo);
+        Task<IEnumerable<Tarea>> BuscarTareaTitulo(string titulo);
 
         bool BuscarTareaId(int tareaId);
 

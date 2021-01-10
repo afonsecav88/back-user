@@ -41,7 +41,7 @@ namespace ListaTareas.Controllers
         }
 
         // GET api/<controller>/5
-        [HttpGet("{id}" , Name="GetTareaById")]
+        [HttpGet("{id:int}" , Name="GetTareaById")]
         public async Task<ActionResult<Tarea>> GetTareaById(int id)
         {
             var tarea = await _context.GetTareaById(id);
@@ -56,20 +56,24 @@ namespace ListaTareas.Controllers
         }
 
 
-      /*  [HttpGet("{titulo}", Name = "GetTareaByTitulo")]
-        public ActionResult<Tarea> GetTareaByTitulo(string titulo)
+        [HttpGet("{titulo}", Name = "GetTareaByTitulo")]
+        public async Task<ActionResult<IEnumerable<Tarea>>> GetTareaByTitulo(string titulo)
         {
-            var tarea =  _context.BuscarTareaTitulo(titulo);
+            var tarea =  await _context.BuscarTareaTitulo(titulo);
 
             if (titulo == null)
             {
                 return NotFound("Debes poner un titulo");
             }
-            //var objDto = _mapper.Map<TareasReadDTO>(tarea);
+            if (tarea == null)
+            {
+                return NotFound("No exiten tareas con ese Titulo");
+            }
+
 
             return Ok(tarea);
         }
-        */
+        
 
 
         // POST /controller
@@ -86,7 +90,7 @@ namespace ListaTareas.Controllers
         }
 
         // PUT /controller>/5
-        [HttpPatch("{id}", Name = "UpdateTarea")]
+        [HttpPut("{id}", Name = "UpdateTarea")]
         public ActionResult UpdateTarea(int Id, [FromBody] Tarea tarea )
         {
 
